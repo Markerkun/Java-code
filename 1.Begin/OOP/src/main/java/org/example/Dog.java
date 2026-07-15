@@ -5,19 +5,19 @@ import lombok.ToString;
 
 @Data
 @ToString
-public class Cat extends Animal {
+public class Dog extends Animal {
 
-    private boolean indoorOnly;
+    private int commandsAmount;
 
-    public Cat() {
-        super("Cat",2);
-        this.indoorOnly = false;
+    public Dog() {
+        super("Dog",2);
+        this.commandsAmount = 2;
     }
 
     @Override
     public String toString() {
         String str = super.toString();
-        str+="indoor: "+indoorOnly;
+        str+="Amount of commands: "+commandsAmount;
         return str;
     }
 

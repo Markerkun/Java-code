@@ -1,20 +1,34 @@
 package org.example;
-import lombok.*;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 @Data
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class Human {
-    private String Name;
-    private int Age;
-    private double Weight;
-    private double Height;
+public class Country {
+    private String name;
+    private String continent;
+    private long population;
+    private String phoneCode;
+    private String capital;
 
-    public Human(){
-        this.Name="Noname";
-        this.Age=0;
-        this.Weight=1;
-        this.Height=1;
+    public Country() {
+        this.name = "Unknown";
+        this.continent = "Unknown";
+        this.population = 0L;
+        this.phoneCode = "+000";
+        this.capital = "Unknown";
+    }
+
+    public void initCountry(String name, String continent, long population, String phoneCode, String capital) {
+        this.name = name;
+        this.continent = continent;
+        this.population = population;
+        this.phoneCode = phoneCode;
+        this.capital = capital;
     }
 }
