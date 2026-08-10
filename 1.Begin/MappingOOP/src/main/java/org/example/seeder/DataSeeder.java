@@ -1,4 +1,4 @@
-package org.example.seeders;
+package org.example.seeder;
 
 import org.example.entities.CategoryEntity;
 import org.example.entities.ProductEntity;
