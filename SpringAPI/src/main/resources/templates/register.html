@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="uk"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{layout :: head('Реєстрація | SpringAPI')}"></head>
+
+<body class="min-h-screen bg-slate-950 text-white flex flex-col">
+
+<!-- Navbar -->
+<header th:replace="~{layout :: navbar}"></header>
+
+
+<!-- Content -->
+<main class="flex-1
+             flex items-center
+             justify-center
+             px-4 py-12">
+
+    <div class="w-full max-w-md">
+
+        <!-- Title -->
+        <div class="text-center mb-8">
+
+            <h1 class="text-4xl font-bold">
+                SpringAPI
+            </h1>
+
+            <p class="text-slate-400 mt-2">
+                Створіть новий акаунт
+            </p>
+
+        </div>
+
+
+        <!-- Card -->
+        <div class="bg-slate-900
+                    border border-slate-800
+                    rounded-2xl
+                    p-8
+                    shadow-2xl">
+
+            <h2 class="text-2xl font-semibold mb-6">
+                Реєстрація
+            </h2>
+
+
+            <form action="/register" method="post">
+
+                <!-- Username -->
+                <div class="mb-5">
+
+                    <label for="username"
+                           class="block text-sm
+                                  font-medium
+                                  text-slate-300
+                                  mb-2">
+                        Ім'я користувача
+                    </label>
+
+                    <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            required
+                            placeholder="Введіть username"
+                            class="w-full px-4 py-3
+                                   rounded-xl
+                                   bg-slate-800
+                                   border border-slate-700
+                                   text-white
+                                   placeholder-slate-500
+                                   outline-none
+                                   focus:border-blue-500
+                                   focus:ring-2
+                                   focus:ring-blue-500/20
+                                   transition">
+                </div>
+
+
+                <!-- Email -->
+                <div class="mb-5">
+
+                    <label for="email"
+                           class="block text-sm
+                                  font-medium
+                                  text-slate-300
+                                  mb-2">
+                        Email
+                    </label>
+
+                    <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            placeholder="example@gmail.com"
+                            class="w-full px-4 py-3
+                                   rounded-xl
+                                   bg-slate-800
+                                   border border-slate-700
+                                   text-white
+                                   placeholder-slate-500
+                                   outline-none
+                                   focus:border-blue-500
+                                   focus:ring-2
+                                   focus:ring-blue-500/20
+                                   transition">
+                </div>
+
+
+                <!-- Password -->
+                <div class="mb-5">
+
+                    <label for="password"
+                           class="block text-sm
+                                  font-medium
+                                  text-slate-300
+                                  mb-2">
+                        Пароль
+                    </label>
+
+                    <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            required
+                            placeholder="Створіть пароль"
+                            class="w-full px-4 py-3
+                                   rounded-xl
+                                   bg-slate-800
+                                   border border-slate-700
+                                   text-white
+                                   placeholder-slate-500
+                                   outline-none
+                                   focus:border-blue-500
+                                   focus:ring-2
+                                   focus:ring-blue-500/20
+                                   transition">
+                </div>
+
+
+                <!-- Confirm password -->
+                <div class="mb-6">
+
+                    <label for="confirmPassword"
+                           class="block text-sm
+                                  font-medium
+                                  text-slate-300
+                                  mb-2">
+                        Підтвердження пароля
+                    </label>
+
+                    <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            required
+                            placeholder="Повторіть пароль"
+                            class="w-full px-4 py-3
+                                   rounded-xl
+                                   bg-slate-800
+                                   border border-slate-700
+                                   text-white
+                                   placeholder-slate-500
+                                   outline-none
+                                   focus:border-blue-500
+                                   focus:ring-2
+                                   focus:ring-blue-500/20
+                                   transition">
+                </div>
+
+
+                <!-- Button -->
+                <button
+                        type="submit"
+                        class="w-full py-3
+                               rounded-xl
+                               bg-blue-600
+                               hover:bg-blue-700
+                               font-semibold
+                               transition">
+                    Зареєструватися
+                </button>
+
+            </form>
+
+
+            <!-- Login -->
+            <div class="text-center mt-6">
+
+                <span class="text-slate-400">
+                    Вже маєте акаунт?
+                </span>
+
+                <a href="/login"
+                   class="text-blue-500
+                          hover:text-blue-400
+                          font-medium
+                          ml-1">
+                    Увійти
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- Footer -->
+<footer th:replace="~{layout :: footer}"></footer>
+
+</body>
+</html>

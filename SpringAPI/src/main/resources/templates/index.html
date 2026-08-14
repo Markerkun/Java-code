@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{layout :: head('Головна | SpringAPI')}"></head>
+
+<body class="min-h-screen bg-slate-950 text-white flex flex-col">
+
+<header th:replace="~{layout :: navbar}"></header>
+
+
+<main class="flex-1">
+
+    <section class="max-w-7xl mx-auto px-4 py-24">
+
+        <div class="text-center">
+
+            <h1 class="text-5xl font-bold mb-6">
+                Ласкаво просимо до
+                <span class="text-blue-500">
+                    SpringAPI
+                </span>
+            </h1>
+
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+                Сучасний вебзастосунок на Spring Boot
+                з красивим інтерфейсом на Tailwind CSS.
+            </p>
+
+
+            <div class="flex justify-center gap-4">
+
+                <a href="/login"
+                   class="px-6 py-3
+                          rounded-xl
+                          bg-blue-600
+                          hover:bg-blue-700
+                          font-semibold
+                          transition">
+                    Увійти
+                </a>
+
+                <a href="/register"
+                   class="px-6 py-3
+                          rounded-xl
+                          border border-slate-700
+                          hover:bg-slate-800
+                          font-semibold
+                          transition">
+                    Створити акаунт
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer th:replace="~{layout :: footer}"></footer>
+
+</body>
+</html>

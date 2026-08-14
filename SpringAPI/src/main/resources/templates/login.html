@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="uk"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{layout :: head('Вхід | SpringAPI')}"></head>
+
+<body class="min-h-screen bg-slate-950 text-white flex flex-col">
+
+<!-- Navbar -->
+<header th:replace="~{layout :: navbar}"></header>
+
+
+<!-- Content -->
+<main class="flex-1
+             min-h-[calc(100vh-128px)]
+             flex items-center
+             justify-center
+             px-4 py-12">
+
+    <div class="w-full max-w-md">
+
+        <!-- Title -->
+        <div class="text-center mb-8">
+
+            <h1 class="text-4xl font-bold">
+                Вхід
+            </h1>
+
+            <p class="text-slate-400 mt-2">
+                Увійдіть у свій акаунт
+            </p>
+
+        </div>
+
+
+        <!-- Card -->
+        <div class="bg-slate-900
+                    border border-slate-800
+                    rounded-2xl
+                    p-8
+                    shadow-2xl">
+
+            <form action="/login" method="post">
+
+                <!-- Username -->
+                <div class="mb-5">
+
+                    <label for="username"
+                           class="block text-sm
+                                  font-medium
+                                  text-slate-300
+                                  mb-2">
+                        Ім'я користувача
+                    </label>
+
+                    <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            required
+                            placeholder="Введіть username"
+                            class="w-full px-4 py-3
+                                   rounded-xl
+                                   bg-slate-800
+                                   border border-slate-700
+                                   text-white
+                                   placeholder-slate-500
+                                   outline-none
+                                   focus:border-blue-500
+                                   focus:ring-2
+                                   focus:ring-blue-500/20
+                                   transition">
+                </div>
+
+
+                <!-- Password -->
+                <div class="mb-6">
+
+                    <label for="password"
+                           class="block text-sm
+                                  font-medium
+                                  text-slate-300
+                                  mb-2">
+                        Пароль
+                    </label>
+
+                    <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            required
+                            placeholder="Введіть пароль"
+                            class="w-full px-4 py-3
+                                   rounded-xl
+                                   bg-slate-800
+                                   border border-slate-700
+                                   text-white
+                                   placeholder-slate-500
+                                   outline-none
+                                   focus:border-blue-500
+                                   focus:ring-2
+                                   focus:ring-blue-500/20
+                                   transition">
+                </div>
+
+
+                <!-- Button -->
+                <button
+                        type="submit"
+                        class="w-full py-3
+                               rounded-xl
+                               bg-blue-600
+                               hover:bg-blue-700
+                               font-semibold
+                               transition">
+                    Увійти
+                </button>
+
+            </form>
+
+
+            <!-- Register -->
+            <div class="text-center mt-6">
+
+                <span class="text-slate-400">
+                    Немає акаунта?
+                </span>
+
+                <a href="/register"
+                   class="text-blue-500
+                          hover:text-blue-400
+                          font-medium
+                          ml-1">
+                    Зареєструватися
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- Footer -->
+<footer th:replace="~{layout :: footer}"></footer>
+
+</body>
+</html>
