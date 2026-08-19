@@ -1,216 +1,126 @@
 <!DOCTYPE html>
 <html lang="uk"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout}">
 
-<head th:replace="~{layout :: head('Реєстрація | SpringAPI')}"></head>
+<head>
+    <title>Реєстрація | QRGenerator</title>
+</head>
 
-<body class="min-h-screen bg-slate-950 text-white flex flex-col">
+<body>
 
-<!-- Navbar -->
-<header th:replace="~{layout :: navbar}"></header>
+<div layout:fragment="content">
 
+    <div class="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 py-12">
 
-<!-- Content -->
-<main class="flex-1
-             flex items-center
-             justify-center
-             px-4 py-12">
+        <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
 
-    <div class="w-full max-w-md">
+            <div class="text-center mb-8">
 
-        <!-- Title -->
-        <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold text-gray-800">
+                    Створення акаунта
+                </h1>
 
-            <h1 class="text-4xl font-bold">
-                SpringAPI
-            </h1>
+                <p class="text-gray-500 mt-2">
+                    Зареєструйтесь, щоб користуватися QRGenerator
+                </p>
 
-            <p class="text-slate-400 mt-2">
-                Створіть новий акаунт
-            </p>
+            </div>
 
-        </div>
+            <div th:if="${error}"
+                 class="mb-5 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700"
+                 th:text="${error}">
+            </div>
 
+            <form th:action="@{/register}"
+                  method="post"
+                  class="space-y-5">
 
-        <!-- Card -->
-        <div class="bg-slate-900
-                    border border-slate-800
-                    rounded-2xl
-                    p-8
-                    shadow-2xl">
-
-            <h2 class="text-2xl font-semibold mb-6">
-                Реєстрація
-            </h2>
-
-
-            <form action="/register" method="post">
-
-                <!-- Username -->
-                <div class="mb-5">
-
+                <div>
                     <label for="username"
-                           class="block text-sm
-                                  font-medium
-                                  text-slate-300
-                                  mb-2">
+                           class="block text-sm font-medium text-gray-700 mb-2">
                         Ім'я користувача
                     </label>
 
-                    <input
-                            type="text"
-                            id="username"
-                            name="username"
-                            required
-                            placeholder="Введіть username"
-                            class="w-full px-4 py-3
-                                   rounded-xl
-                                   bg-slate-800
-                                   border border-slate-700
-                                   text-white
-                                   placeholder-slate-500
-                                   outline-none
-                                   focus:border-blue-500
-                                   focus:ring-2
-                                   focus:ring-blue-500/20
-                                   transition">
+                    <input id="username"
+                           type="text"
+                           name="username"
+                           required
+                           minlength="3"
+                           placeholder="Введіть ім'я користувача"
+                           class="w-full px-4 py-3 border border-gray-300 rounded-xl
+                                  focus:outline-none focus:ring-2 focus:ring-indigo-500">
                 </div>
 
-
-                <!-- Email -->
-                <div class="mb-5">
-
+                <div>
                     <label for="email"
-                           class="block text-sm
-                                  font-medium
-                                  text-slate-300
-                                  mb-2">
+                           class="block text-sm font-medium text-gray-700 mb-2">
                         Email
                     </label>
 
-                    <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required
-                            placeholder="example@gmail.com"
-                            class="w-full px-4 py-3
-                                   rounded-xl
-                                   bg-slate-800
-                                   border border-slate-700
-                                   text-white
-                                   placeholder-slate-500
-                                   outline-none
-                                   focus:border-blue-500
-                                   focus:ring-2
-                                   focus:ring-blue-500/20
-                                   transition">
+                    <input id="email"
+                           type="email"
+                           name="email"
+                           required
+                           placeholder="example@gmail.com"
+                           class="w-full px-4 py-3 border border-gray-300 rounded-xl
+                                  focus:outline-none focus:ring-2 focus:ring-indigo-500">
                 </div>
 
-
-                <!-- Password -->
-                <div class="mb-5">
-
+                <div>
                     <label for="password"
-                           class="block text-sm
-                                  font-medium
-                                  text-slate-300
-                                  mb-2">
+                           class="block text-sm font-medium text-gray-700 mb-2">
                         Пароль
                     </label>
 
-                    <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            required
-                            placeholder="Створіть пароль"
-                            class="w-full px-4 py-3
-                                   rounded-xl
-                                   bg-slate-800
-                                   border border-slate-700
-                                   text-white
-                                   placeholder-slate-500
-                                   outline-none
-                                   focus:border-blue-500
-                                   focus:ring-2
-                                   focus:ring-blue-500/20
-                                   transition">
+                    <input id="password"
+                           type="password"
+                           name="password"
+                           required
+                           minlength="6"
+                           placeholder="Введіть пароль"
+                           class="w-full px-4 py-3 border border-gray-300 rounded-xl
+                                  focus:outline-none focus:ring-2 focus:ring-indigo-500">
                 </div>
 
-
-                <!-- Confirm password -->
-                <div class="mb-6">
-
+                <div>
                     <label for="confirmPassword"
-                           class="block text-sm
-                                  font-medium
-                                  text-slate-300
-                                  mb-2">
+                           class="block text-sm font-medium text-gray-700 mb-2">
                         Підтвердження пароля
                     </label>
 
-                    <input
-                            type="password"
-                            id="confirmPassword"
-                            name="confirmPassword"
-                            required
-                            placeholder="Повторіть пароль"
-                            class="w-full px-4 py-3
-                                   rounded-xl
-                                   bg-slate-800
-                                   border border-slate-700
-                                   text-white
-                                   placeholder-slate-500
-                                   outline-none
-                                   focus:border-blue-500
-                                   focus:ring-2
-                                   focus:ring-blue-500/20
-                                   transition">
+                    <input id="confirmPassword"
+                           type="password"
+                           name="confirmPassword"
+                           required
+                           minlength="6"
+                           placeholder="Повторіть пароль"
+                           class="w-full px-4 py-3 border border-gray-300 rounded-xl
+                                  focus:outline-none focus:ring-2 focus:ring-indigo-500">
                 </div>
 
-
-                <!-- Button -->
-                <button
-                        type="submit"
-                        class="w-full py-3
-                               rounded-xl
-                               bg-blue-600
-                               hover:bg-blue-700
-                               font-semibold
-                               transition">
+                <button type="submit"
+                        class="w-full py-3.5 bg-indigo-600 text-white rounded-xl
+                               font-semibold hover:bg-indigo-700 transition">
                     Зареєструватися
                 </button>
 
             </form>
 
-
-            <!-- Login -->
-            <div class="text-center mt-6">
-
-                <span class="text-slate-400">
-                    Вже маєте акаунт?
-                </span>
-
-                <a href="/login"
-                   class="text-blue-500
-                          hover:text-blue-400
-                          font-medium
-                          ml-1">
+            <p class="text-center text-gray-500 mt-6">
+                Вже маєте акаунт?
+                <a th:href="@{/login}"
+                   class="text-indigo-600 hover:text-indigo-700 font-semibold">
                     Увійти
                 </a>
-
-            </div>
+            </p>
 
         </div>
 
     </div>
 
-</main>
-
-
-<!-- Footer -->
-<footer th:replace="~{layout :: footer}"></footer>
+</div>
 
 </body>
 </html>
