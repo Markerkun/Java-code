@@ -7,7 +7,7 @@ import org.example.dtos.account.RegisterDto;
 import org.example.entities.RoleEntity;
 import org.example.entities.UserEntity;
 import org.example.repositories.IRoleRepository;
-import org.example.repositories.UserRepository;
+import org.example.repositories.IUserRepository;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -15,9 +15,9 @@ import org.springframework.security.web.context.HttpSessionSecurityContextReposi
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor //Для DI - Dependency Injection щоб усе працювало як сало
+@RequiredArgsConstructor //Для DI - Dependency Injection щоб усе працювало як сало/Для DI - Dependency Injection щоб усе працювало як сало
 public class AccountService {
-    private final UserRepository userRepository;
+    private final IUserRepository userRepository;
     private final IRoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
 

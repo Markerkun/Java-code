@@ -10,10 +10,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-@AllArgsConstructor
+//@AllArgsConstructor
 public class AccountController {
 
     private final AccountService accountService;
+
+    public AccountController(AccountService accountService)
+    {
+        this.accountService = accountService;
+    }
 
     @GetMapping("/login")
     public String login() {

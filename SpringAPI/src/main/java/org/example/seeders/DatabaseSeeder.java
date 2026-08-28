@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import org.example.entities.RoleEntity;
 import org.example.entities.UserEntity;
 import org.example.repositories.IRoleRepository;
-import org.example.repositories.UserRepository;
+import org.example.repositories.IUserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 public class DatabaseSeeder implements CommandLineRunner {
 
-    private final UserRepository userRepository;
+    private final IUserRepository userRepository;
     private final IRoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
 
